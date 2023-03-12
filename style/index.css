@@ -24,6 +24,7 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+	overflow: hidden;
 }
 
 
@@ -104,10 +105,23 @@ ENSURE A SCREEN LARGE ENOUGH
 
 #need-computer {
 	background-color: red;
+	display: none;
 }
 
 /* Whenever the screen's width is smaller than 1200px, display #need-computer on the whole page and disable scrolling */
 @media screen and (max-width: 1200px) {
+	#need-computer {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100dvw;
+		height: 100dvh;
+		z-index: 100;
+	}
+}
+
+@media screen and (max-height: 875px) {
 	#need-computer {
 		display: block;
 		position: fixed;
@@ -571,7 +585,7 @@ SPECIFIC SLIDES SETTINGS
 }
 
 #play-grid {
-	padding: 4em 20px;
+	padding: 3em 20px;
 	border-collapse: separate;
 	border-spacing: 10px;
 	margin: 0 auto;
