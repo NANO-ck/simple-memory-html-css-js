@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+	<meta name="description" content="mots clefs">
+	<link rel="stylesheet" href="CSS/styles.css">
+	<title>Memory | Le Jeu</title>
+	<link rel="icon" type="image/png" href="Photos/1200px-Puzzle.svg.png">
+</head>
+
+<body>
+	<nav>
+		<span>
+			<img id="logo" src="Photos/1200px-Puzzle.svg.png" alt="Logo du site">
+			<div class ="menu">
+				<ul>
+				<span>
+					<li><a class="avecunlien" href="https://www.jeuxmaths.fr/">Autres jeux</a></li>
+				</span>
+				<span>
+					<li><a class="avecunlien" href="#rdj">Règles du Jeu</a></li>
+				</span>
+				<span>
+					<li><a class="avecunlien" href="#titrescore">Scores</a></li>
+				</span>
+	
+				</ul>
+			</div>
+		</span>
+		<div>
+			<span id="Nom">
+				Nils B
+			</span>
+		</div>
+	</nav>
+
+	<br><br>
+	<center>
+	<h1>Jeu de Memory</h1>
+	<div class="Intro">
+		<p class="intro">Le jeu du memory (ou jeu de paires) est un jeu de société édité
+			pour la première fois par l'entreprise Ravensburger en 1959. Il se joue de 2 à 8 joueurs.
+			Depuis, il a été décliné en de nombreuses versions mais le principe reste le même. Une variante possible consiste en l'introduction d'une carte sans appariement, qui reste donc la dernière carte en jeu après que toutes les paires ont été découvertes. 
+			Le jeu a été décliné en de nombreux thèmes (publicitaires, thématiques, à licences). Certaines éditions sont désormais épuisées et remplacées par de nouvelles aux thèmes plus modernes.
+			L'éditeur propose aussi à ses clients de créer leur propre jeu, avec leurs propres photos
+		</p>
+	<br>
+	
+	
+	<div>
+		<h2>Règles du Jeu</h2>
+		<p id="rdj">Le jeu se compose de paires de cartes portant des illustrations identiques. A chaque
+			tour les joueurs doivent retourner 2 cartes : si les images affichées sont identiques
+			alors le joueur peut continuer son tour, sinon les cartes sont retournées face cachée
+			et tour passe au joueur suivant.<br>
+			Lorsque toutes les cartes ont été retournées, le joueur qui a reformé le plus de paires
+		est déclaré vainqueur.<br>En mode 1 joueur, l'objectif du jeu est de retouver toutes les paires
+		en le moins de coups possible.
+		Votre score sera le nombre de coups dont vous avez eu besoin.
+	</p><br><br>
+	<img id="foot" src="Photos/foot.jpg" alt="Démo visuelle">
+	<br><br>
+</div>
+<button class="fancy" onclick="rejouer()">
+	<span class="top-key"></span>
+	<span class="text">Nouvelle partie</span>
+	<span class="bottom-key-1"></span>
+	<span class="bottom-key-2"></span>
+</button><br><br>
+	<div>
+		<table> 
+			<tr>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=tour width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=arc width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=autre width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=louvre width="150" height="150"></td>
+			</tr>
+			<tr>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=mirabeau width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=montmartre width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=montmartre width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=mirabeau width="150" height="150"></td>
+			  </tr>
+			  <tr>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=tour width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=arc width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=autre width="150" height="150"></td>
+				<td><img class="carte" onclick="jeu(this)" src="Photos/vv.png" flip = 1 name=louvre width="150" height="150"></td>
+			  </tr>
+		  </table>
+	</div>
+<br><br>
+</div>
+<div class="gauche">
+	<h3 id="titrescore">Score du joueur </h3>
+</div><br><br>
+<div class="box">
+	<span></span>
+	<div class="content">
+	  <h1 id="score">En attente de votre premier coup</h1>
+	</div>
+  </div>
+	
+	</center>
+
+	<a class="nexion" href="https://www.nexion.xyz">o</a> <!--Easter EGG pour ceux qui le trouvent :)-->
+	<script src="JS/code.js"></script>
+</body>
+</html>
