@@ -1,3 +1,5 @@
+// Merci à Nils pour l'idée d'ajouter de l'audio
+
 let page = 0
 
 const cardBack = "assets/card-back.jpg"
@@ -122,11 +124,12 @@ function generateGrid() {
 }
 
 function flip(card) {
+    if(returned.length == 0) (new Audio("assets/tick.mp3")).play();
     if(returned.length == 2) return console.log("2 cards are already flipped")
     // If the card is already flipped, do nothing
     if(card.classList.contains('flipped')) return console.log('already flipped')
     returned.push(card)
-    card.classList.add('flipped')
+    card.classList.add('flipped');
     if(returned.length == 2) verifyCards()
 }
 
@@ -134,6 +137,7 @@ function verifyCards() {
     const card1 = returned[0].querySelector('.flip-card-back img').src
     const card2 = returned[1].querySelector('.flip-card-back img').src
     if(card1 == card2) {
+        (new Audio('assets/success.mp3')).play()
         returned[0].classList.add('hide')
         returned[1].classList.add('hide')
         returned[0].onclick = null
@@ -142,11 +146,12 @@ function verifyCards() {
         // Update scores
         const score = document.getElementById('score-'+playing)
         score.innerHTML = parseInt(score.innerHTML) + 1
-        // // Check if the game is over
+        // Check if the game is over
         if(document.querySelectorAll('.flip-card:not(.hide)').length == 0) {
             gameOver()
         }
     } else {
+        (new Audio('assets/wrong.mp3')).play()
         setTimeout(() => {
             const elem1 = returned[0]
             const elem2 = returned[1]
@@ -183,6 +188,7 @@ function activePlayer(player) {
 }
 
 function gameOver() {
+    (new Audio('assets/won.mp3')).play()
     document.getElementById("player-1").classList.add('active-player')
     document.getElementById("player-2").classList.add('active-player')
     playinfo("Partie terminée !")
