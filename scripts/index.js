@@ -250,3 +250,21 @@ function untype() {
         }
     })
 }
+
+// Cheat function // Activate it in the console with the command cheat()
+function cheat() {
+    // Click on the cards that match each other (only works if there are 2 cards of the same type) with a delay of 1 second between each click
+    const cards = document.querySelectorAll('.flip-card:not(.hide)')
+    for(let i = 0; i < cards.length; i++) {
+        const card1 = cards[i].querySelector('.flip-card-back img').src
+        for(let j = i + 1; j < cards.length; j++) {
+            const card2 = cards[j].querySelector('.flip-card-back img').src
+            if(card1 == card2) {
+                setTimeout(() => {
+                    cards[i].click()
+                    cards[j].click()
+                }, 1000 * i)
+            }
+        }
+    }
+}

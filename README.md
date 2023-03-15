@@ -27,6 +27,8 @@ This project is not meant to be a serious project. It is meant to be a simple pr
 As a result, the code isn't optimized and there are probably better ways to do things, such as the page's design and adaptability to different screen sizes. For now, we only accept one screen size, and other screens are asked to zoom out to see the page correctly.
 This project also includes many security vulnerabilities. You can for example cheat by simply inspecting the page.
 
+As a proof of the lack of security of this project, I made a function to cheat at the end of the scripts/index.js. This script works the same way as if you just inspected the browser to check the back of the card. To test it, simply type `cheat()` in the console.
+
 
 ## License
 
